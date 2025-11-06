@@ -1,78 +1,221 @@
-# MERN Stack Integration Assignment
+MERN Stack Blog Application
+A full-stack blog application built with the MERN stack (MongoDB, Express.js, React.js, Node.js) featuring complete CRUD operations, user authentication, and modern UI.
 
-This assignment focuses on building a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application that demonstrates seamless integration between front-end and back-end components.
+🚀 Features
+Full CRUD Operations - Create, Read, Update, Delete blog posts
 
-## Assignment Overview
+User Authentication - Secure user registration and login
 
-You will build a blog application with the following features:
-1. RESTful API with Express.js and MongoDB
-2. React front-end with component architecture
-3. Full CRUD functionality for blog posts
-4. User authentication and authorization
-5. Advanced features like image uploads and comments
+Comments System - Add comments to blog posts
 
-## Project Structure
+Categories - Organize posts by categories
 
-```
+Search & Filter - Find posts by title, content, or tags
+
+Responsive Design - Works on all devices
+
+RESTful API - Clean API architecture
+
+Modern UI - Clean and intuitive user interface
+
+🛠️ Tech Stack
+Frontend
+React.js - UI framework
+
+React Router DOM - Client-side routing
+
+Axios - HTTP client for API calls
+
+Context API - State management
+
+CSS3 - Styling
+
+Backend
+Node.js - Runtime environment
+
+Express.js - Web framework
+
+MongoDB - NoSQL database
+
+Mongoose - ODM for MongoDB
+
+JWT - Authentication tokens
+
+CORS - Cross-origin resource sharing
+
+dotenv - Environment variables
+
+📦 Installation & Setup
+Prerequisites
+Node.js (v18 or higher)
+
+MongoDB (local or Atlas)
+
+npm or yarn
+
+1. Clone the Repository
+bash
+git clone <your-repository-url>
+cd mern-stack-integration-Ghyslaine95
+2. Backend Setup
+bash
+# Navigate to server directory
+cd server
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+
+# Start the development server
+npm run dev
+3. Frontend Setup
+bash
+# Navigate to client directory (in a new terminal)
+cd client
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+⚙️ Environment Variables
+Server (.env)
+env
+NODE_ENV=development
+PORT=5000
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+JWT_EXPIRE=30d
+CLIENT_URL=http://localhost:3000
+Client (.env)
+env
+VITE_API_BASE_URL=http://localhost:5000/api
+🗄️ Database Setup
+Option 1: MongoDB Atlas (Recommended)
+Create a free account at MongoDB Atlas
+
+Create a cluster and get your connection string
+
+Update MONGODB_URI in your .env file
+
+Option 2: Local MongoDB
+Install MongoDB Community Server
+
+Start MongoDB service
+
+Use mongodb://localhost:27017/mern-blog as your connection string
+
+Seed the Database
+bash
+cd server
+node seeder.js
+🚀 Running the Application
+Development Mode
+bash
+# Terminal 1 - Start backend
+cd server
+npm run dev
+
+# Terminal 2 - Start frontend
+cd client
+npm run dev
+Production Build
+bash
+# Build client
+cd client
+npm run build
+
+# Start production server
+cd ../server
+npm start
+📡 API Endpoints
+Posts
+GET /api/posts - Get all posts
+
+GET /api/posts/:id - Get single post
+
+POST /api/posts - Create new post
+
+PUT /api/posts/:id - Update post
+
+DELETE /api/posts/:id - Delete post
+
+POST /api/posts/:id/comments - Add comment to post
+
+Categories
+GET /api/categories - Get all categories
+
+POST /api/categories - Create new category
+
+Authentication
+POST /api/auth/register - User registration
+
+POST /api/auth/login - User login
+
+🗂️ Project Structure
+text
 mern-blog/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
+├── client/                 # React frontend
+│   ├── src/
 │   │   ├── components/     # Reusable components
 │   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
+│   │   ├── context/        # React context
 │   │   ├── services/       # API services
-│   │   ├── context/        # React context providers
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Express.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Route controllers
+│   │   └── App.jsx         # Main app component
+│   └── package.json
+├── server/                 # Express backend
 │   ├── models/             # Mongoose models
+│   ├── controllers/        # Route controllers
 │   ├── routes/             # API routes
 │   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
-```
+│   └── server.js           # Main server file
+└── README.md
 
-## Getting Started
+🧪 Testing the Application
+Visit the homepage: http://localhost:3000
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week4-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+Browse posts: http://localhost:3000/posts
 
-## Files Included
+Create a post: http://localhost:3000/create-post
 
-- `Week4-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Configuration files
-  - Sample models and components
+Test API directly: http://localhost:5000/api/posts
 
-## Requirements
+📝 Usage Guide
+Creating a Post
+Navigate to "Create Post" from the navbar
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git
+Fill in the title, content, author, and select a category
 
-## Submission
+Add optional tags separated by commas
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+Click "Publish Post"
 
-1. Complete both the client and server portions of the application
-2. Implement all required API endpoints
-3. Create the necessary React components and hooks
-4. Document your API and setup process in the README.md
-5. Include screenshots of your working application
+Managing Posts
+View all posts: Browse the posts page
 
-## Resources
+Edit a post: Click "Edit" on any post
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/) 
+Delete a post: Use the delete functionality
+
+Add comments: Scroll to the bottom of any post detail page
+
+Searching and Filtering
+Use the search bar to find posts by title or content
+
+Filter posts by category using the category dropdown
+
+👥 Authors
+Ghyslaine
+
+🙏 Acknowledgments
+MERN stack documentation
+
+
+React.js community
+
+Express.js framework
+
+
+
